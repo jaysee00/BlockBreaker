@@ -1,0 +1,6 @@
+.vs/
+obj/
+Logs/
+Temp/
+.DS_Store
+Library/
