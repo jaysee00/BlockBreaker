@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class Ball : MonoBehaviour
@@ -65,6 +63,8 @@ public class Ball : MonoBehaviour
 
         if (launched)
         {
+            myRigidBody.velocity += velocityTweak;
+
             var clip = bouncySounds[Random.Range(0, bouncySounds.Length - 1)];
             audioSource.PlayOneShot(clip);
         }
