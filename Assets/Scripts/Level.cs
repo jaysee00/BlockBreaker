@@ -62,6 +62,7 @@ public class Level : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(winSound, Camera.main.transform.position);
             ball.Freeze();
+            
             Debug.Log("You Won! Loading Next Level!");
             StartCoroutine(LoadNextLevel());
         }

@@ -30,12 +30,6 @@ public class Block : MonoBehaviour
     {
         if (tag == "Breakable")
         {
-            
-            Vector3 currentScale = this.transform.localScale;
-            Debug.Log("Current scale: " + currentScale);
-            this.transform.localScale = new Vector3(currentScale.x * 0.75f, currentScale.y * 0.75f, currentScale.z * 0.75f);
-            Debug.Log("New scale: " + this.transform.localScale);
-
             hits++;
             int maxHits = hitSprites.Length + 1;
             if (hits >= maxHits)

@@ -7,7 +7,7 @@ public class Ball : MonoBehaviour
     [SerializeField] AudioClip[] bouncySounds;
     [SerializeField] Vector2 launchVector;
     [SerializeField] private Paddle paddle;
-    [SerializeField] private float randomBounceFactor = 0.2f;
+    [SerializeField] private float randomBounceFactor = 0.4f;
 
     // state
     private Vector2 paddleToBallVector;
@@ -20,7 +20,7 @@ public class Ball : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start() {
+    public void Start() {
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         paddleToBallVector = this.transform.position - this.paddle.transform.position;
         this.audioSource = GetComponent<AudioSource>();
@@ -36,6 +36,12 @@ public class Ball : MonoBehaviour
     private void LockBallToPaddle()
     {
         this.transform.position = new Vector2(this.paddle.transform.position.x, this.paddle.transform.position.y) + this.paddleToBallVector;
+    }
+
+    public void Launch()
+    {
+        this.launched = true;
+        this.myRigidBody.velocity = new Vector2(Random.Range(5, 10), Random.Range(5, 10));
     }
 
     private void LaunchOnClick()
