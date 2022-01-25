@@ -1,5 +1,0 @@
-- Finish scaling block logic
-- Add extra ball block
-- Fix up level logic (always start at level 1?)
-- Ensure score renders well and persists across levels
-- Level splash screen?
