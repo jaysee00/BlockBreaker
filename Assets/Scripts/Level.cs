@@ -13,6 +13,7 @@ public class Level : MonoBehaviour
     [SerializeField] private int pointsPerBlock = 10;
     [SerializeField, Range(0.1f, 10f)] private float gameSpeed = 1f;
     [SerializeField] private AudioClip winSound;
+    [SerializeField] private bool isAutoPlayEnabled;
     
     private int blocksRemaining = 0;
     private Ball ball;
@@ -76,5 +77,10 @@ public class Level : MonoBehaviour
     private void Update()
     {
         Time.timeScale = gameSpeed;
+    }
+
+    public bool IsAutoPlayEnabled()
+    {
+        return this.isAutoPlayEnabled;
     }
 }
